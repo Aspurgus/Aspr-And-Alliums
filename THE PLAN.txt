@@ -4,7 +4,9 @@ THEME: Food and Farming+
 -required farmers delight kek-
 
 Current Task:
-Add FD as a dependency
+-learn how to add content ;-;
+-basic few items and blocks [a deco block, crafting item, food item, gui block, random funny item]
+-Add FD as a dependency
 
 
 IDEAS:
