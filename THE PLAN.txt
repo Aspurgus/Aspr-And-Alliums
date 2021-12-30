@@ -3,6 +3,10 @@ ALRIGHT SO
 THEME: Food and Farming+
 -required farmers delight kek-
 
+Current Task:
+Add FD as a dependency
+
+
 IDEAS:
 -garlic
 -corn
