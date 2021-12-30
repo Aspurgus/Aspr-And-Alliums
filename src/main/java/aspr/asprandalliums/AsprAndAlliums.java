@@ -1,5 +1,6 @@
-package com.aspr.asprandalliums;
+package aspr.asprandalliums;
 
+import aspr.asprandalliums.registry.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,18 +24,20 @@ import java.util.stream.Collectors;
 @Mod(AsprAndAlliums.MODID)
 public class AsprAndAlliums
 {
-    public static final String MODID = "asprandalliums";
     private static final Logger LOGGER = LogManager.getLogger();
 
+    public static final String MODID = "asprandalliums";
+    public static final AsprItemGroup ITEM_GROUP = new AsprItemGroup(AsprAndAlliums.MODID);
+
     public AsprAndAlliums() {
-        // Register the setup method for modloading
+
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.ITEMS.register(eventBus);
+
         eventBus.addListener(this::setup);
-        // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
         eventBus.addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
         eventBus.addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in

@@ -5,7 +5,7 @@ THEME: Food and Farming+
 
 Current Task:
 -learn how to add content ;-;
--basic few items and blocks [a deco block, crafting item, food item, gui block, random funny item]
+-basic few items and blocks [a deco block, crafting item, food item, gui block, random icon item]
 -Add FD as a dependency
 
 

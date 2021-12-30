@@ -15,6 +15,7 @@ version = '1.0'
 group = 'com.aspr.asprandalliums' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'asprandalliums'
 
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
 
 minecraft {
     mappings channel: 'official', version: '1.16.5'
