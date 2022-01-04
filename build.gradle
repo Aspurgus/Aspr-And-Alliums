@@ -7,13 +7,13 @@ buildscript {
         classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "5.1.+", changing: true
     }
 }
-
 apply plugin: "net.minecraftforge.gradle"
+
 apply plugin: "eclipse"
 apply plugin: "maven-publish"
 
 version = "${project.minecraft}-${project.modVersion}"
-group = "com.aspr"
+group = "com.aspr.asprandalliums"
 archivesBaseName = project.modId
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
@@ -49,7 +49,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources")
+            args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources/")
             mods {
                 asprandalliums {
                     source sourceSets.main
@@ -71,18 +71,17 @@ dependencies {
 }
 
 repositories {
-    maven {
-        url "https://maven.jaackson.me"
-    }
-    maven {
-        url "https://dvs1.progwml6.com/files/maven/"
-    }
+
     maven {
         url "https://www.cursemaven.com"
     }
     maven {
         url "https://modmaven.k-4u.nl"
     }
+    maven {
+        url "https://dvs1.progwml6.com/files/maven/"
+    }
+
 }
 
 jar {
