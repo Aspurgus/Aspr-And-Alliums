@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 public class AsprAndAlliums
 {
     private static final Logger LOGGER = LogManager.getLogger();
-
     public static final String MODID = "asprandalliums";
     public static final AsprItemGroup ITEM_GROUP = new AsprItemGroup(AsprAndAlliums.MODID);
 

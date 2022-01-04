@@ -13,7 +13,7 @@ public class ModItems {
 
     //Items
     public static final RegistryObject<Item> ASPR = ITEMS.register("aspr",
-            () -> new Item(new Item.Properties().tab(AsprAndAlliums.ITEM_GROUP)));
+            () -> new Item(new Item.Properties().group(AsprAndAlliums.ITEM_GROUP)));
 
 
 }
