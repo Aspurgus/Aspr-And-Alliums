@@ -35,10 +35,6 @@ public class AsprAndAlliums
 
         ModItems.ITEMS.register(eventBus);
 
-        eventBus.addListener(this::setup);
-        eventBus.addListener(this::enqueueIMC);
-        eventBus.addListener(this::processIMC);
-        eventBus.addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
