@@ -1,5 +1,6 @@
 package aspr.asprandalliums;
 
+import aspr.asprandalliums.registry.ModBlocks;
 import aspr.asprandalliums.registry.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -33,6 +34,7 @@ public class AsprAndAlliums
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(eventBus);
+        ModBlocks.BLOCKS.register(eventBus);
 
 
         // Register ourselves for server and other game events we are interested in

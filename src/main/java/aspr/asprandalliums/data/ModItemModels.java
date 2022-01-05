@@ -6,8 +6,8 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModItemGenerator extends ItemModelProvider {
-    public ModItemGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+public class ModItemModels extends ItemModelProvider {
+    public ModItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, AsprAndAlliums.MODID, existingFileHelper);
     }
 
@@ -19,6 +19,9 @@ public class ModItemGenerator extends ItemModelProvider {
 
         //Items
         builder(itemGenerated, "item/aspr");
+
+        //Feasts
+
 
     }
 

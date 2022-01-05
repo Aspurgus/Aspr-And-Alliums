@@ -3,6 +3,7 @@ package aspr.asprandalliums.registry;
 import aspr.asprandalliums.AsprAndAlliums;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,7 +14,7 @@ public class ModItems {
 
     //Items
     public static final RegistryObject<Item> ASPR = ITEMS.register("aspr",
-            () -> new Item(new Item.Properties().group(AsprAndAlliums.ITEM_GROUP)));
+            () -> new Item(new Item.Properties().containerItem(Items.CARROT).group(AsprAndAlliums.ITEM_GROUP)));
 
 
 }
