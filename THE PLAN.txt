@@ -4,12 +4,39 @@ THEME: Food and Farming+
 -required farmers delight kek-
 
 Current Task:
--learn how to add content ;-;
--basic few items and blocks [a deco block, crafting item, food item, gui block, random icon item]
--Add FD as a dependency
 
 
-IDEAS:
+
+NEW MOD IDEA
+compat and extras fr me an a besties server :DD
+Features:
+
+
+
+-Origins Meat Meals 10, 2 Feasts, 1 Pie
+ -Meals
+    -Sirlion Steak and Shrooms
+        Hoglin Sirloin + one of each nether mushroom In a Pot = Sirloin Steak and Shrooms served on bowl
+        Gives Nourishment for 5 minutes
+ -Feasts
+    -Pork Delight
+        2 Smoked Ham + Porkchop + 3 Raw Bacon in a Pot = Pork Delight served on bowl
+        Eaten from Bowl
+        Gives Nourishment for 6 minutes
+    -Steaming Strider
+        Add Minced Hog, cutting Hoglin Loin
+        Add Strider Skin, Change to drop when knifing Striders.
+        3 Ground Strider + 2 Minced Hog + 1 Lava Bucket = Stuffed Strider served on Strider Skin
+        Eaten from Stick, Gives Steaming Stride Stick
+        Gives Comfort and Fire Res for 4 minutes and 1 minute
+ -Pie ig
+-Origins Vegetarian Meals 10, 3 Feasts,
+ -
+
+
+
+
+IDEAS [anothr project]:
 -garlic
 -corn
 -tea tree
