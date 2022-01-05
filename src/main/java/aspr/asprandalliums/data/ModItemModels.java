@@ -19,8 +19,10 @@ public class ModItemModels extends ItemModelProvider {
 
         //Items
         builder(itemGenerated, "item/aspr");
+        builder(itemGenerated, "item/meat_feast");
 
-        //Feasts
+
+        //Feast Blocks
 
 
     }

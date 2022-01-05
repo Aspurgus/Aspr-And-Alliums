@@ -15,7 +15,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AsprAndAlliums.MODID);
 
     //Feasts
-    public static final RegistryObject<Block> MEAT = BLOCKS.register("meat_feast_block",
+    public static final RegistryObject<Block> MEAT = BLOCKS.register("meat_feast",
     () -> new MeatFeast(AbstractBlock.Properties.create(Material.BAMBOO, MaterialColor.WHITE_TERRACOTTA).
             hardnessAndResistance(1.0f, 1.0f).sound(SoundType.SLIME), ModItems.ASPR, true));
 
