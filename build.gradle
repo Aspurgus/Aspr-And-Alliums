@@ -66,8 +66,12 @@ sourceSets.main.resources {
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
 
+    implementation fg.deobf("com.minecraftabnormals:abnormals-core:1.16.5-3.2.0")
+
     implementation fg.deobf("curse.maven:farmersdelight-398521:3503844")
-//    implementation fg.deobf("curse.maven:nethersdelight-496394:3443481")
+    implementation fg.deobf("curse.maven:nethersdelight-496394:3443481")
+    implementation fg.deobf("curse.maven:savageandravage-381736:3226442")
+    implementation fg.deobf("curse.maven:endergetic-291509:3154938")
 
 }
 
@@ -77,10 +81,7 @@ repositories {
         url "https://www.cursemaven.com"
     }
     maven {
-        url "https://modmaven.k-4u.nl"
-    }
-    maven {
-        url "https://dvs1.progwml6.com/files/maven/"
+        url  "https://maven.jaackson.me"
     }
 
 }
@@ -90,7 +91,7 @@ jar {
         attributes([
                 "Specification-Title"     : project.modName,
                 "Specification-Vendor"    : "Aspr !",
-                "Specification-Version"   : "1",
+                "Specification-Version"   : "1.0",
                 "Implementation-Title"    : project.modName,
                 "Implementation-Version"  : project.modVersion,
                 "Implementation-Vendor"   : "Aspr !",

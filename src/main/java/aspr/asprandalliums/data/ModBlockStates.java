@@ -36,7 +36,7 @@ public class ModBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        this.feastBlock((FeastBlock)ModBlocks.MEAT.get());
+//        this.feastBlock((FeastBlock)ModBlocks.MEAT.get());
     }
 
     public void feastBlock(FeastBlock block) {

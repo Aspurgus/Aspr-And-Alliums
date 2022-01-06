@@ -31,5 +31,23 @@ From a
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[1.16.5,1.17)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
+[[dependencies.asprandalliums]]
+    modId = "abnormals_core"
+    mandatory = true
+    versionRange = "[3.2.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.asprandalliums]]
+    modId = "farmersdelight"
+    mandatory = true
+    versionRange = "[0.5.4,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.asprandalliums]]
+    modId = "nethers_delight"
+    mandatory = true
+    versionRange = "[2.1,)"
+    ordering = "AFTER"
+    side = "BOTH"

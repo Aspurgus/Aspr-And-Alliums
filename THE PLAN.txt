@@ -4,34 +4,129 @@ THEME: Food and Farming+
 -required farmers delight kek-
 
 Current Task:
-
-
+Entities Section
+Origins Meat
 
 NEW MOD IDEA
 compat and extras fr me an a besties server :DD
 Features:
 
+-Work Stations
+    -Bamboo Mat [?]
+        bamboo-ish background gui
+        used to make Sushi Rolls
+        Sushi Rolls are strong unique foods
 
+-Entities
+    -Tuna [may need Citadel]
+        Large fish, spawns in groups of 2-3 maybe with a few variants
+        Death leaves Corpse
+        Right clicking Corpse with a Knife will give 2-4 Tuna Cuts, a Tuna Head, and 1-2 Bones
+        Tuna Cuts can be smoked to get Tuna Steak
+        Tuna Cuts can be cut to Tuna Fillets [May Change]
+        Tuna Head is like a trophy mount, can be used in Dog Food
+        Tuna Fillets can make Fish Balls
+        Tuna Fillets can make Fried Tuna
+        Tuna Fillets can make Seafood Salad
 
--Origins Meat Meals 10, 2 Feasts, 1 Pie
+-Origins Meat Meals, 2 Feasts, 1 Pie
  -Meals
-    -Sirlion Steak and Shrooms
+    -Sirloin Steak and Shrooms
         Hoglin Sirloin + one of each nether mushroom In a Pot = Sirloin Steak and Shrooms served on bowl
-        Gives Nourishment for 5 minutes
+        Gives Nourishment for 3 minutes and 1 heart Absorption for 1 minute
+        Fills around the same as Steak and Potatoes
+    -Fish Balls
+        2 Tuna Fillets + Egg in a Pot = 4 Fish Balls served on nothing
+        Fills around the same as a Steak
+    -Chicken and Bone Marrow
+        2 Chicken or Chicken Cuts + Bone in a Pot = Chicken and Bone Marrow served on Bone
+        Gives back Bonemeal
+        Gives Comfort for 3 minutes
+        Fills the same as Chicken Soup
+    -Beef Bone Broth
+        1 Raw Beef + 1 Raw Beef or Ground Beef + 2 Bones in a pot = Beef Bone Broth served on Bowl
+        Gives Comfort for 3 minutes
+        Fills the same as Chicken Soup
+    -Lamb Nuggets
+        2 Lamb Chops + Egg in a Pot = 2 Lamb Nuggets served on nothing
+        Gives Nourishment for 1 Minute, fast to eat
+        Fills the same as Cooked Mutton
+    -Seafood Salad
+        Tuna Fillet + Salmon Fillet + Tropical Fish Fillet + Cooked Pufferfish Fillet + Bowl in Table = Seafood Salad
+        Gives Nourishment for 3 minutes and 1 minute Conduit Power
+        Fills the same as Pasta with Meatballs
  -Feasts
-    -Pork Delight
+    -Large Pork Feast
         2 Smoked Ham + Porkchop + 3 Raw Bacon in a Pot = Pork Delight served on bowl
         Eaten from Bowl
-        Gives Nourishment for 6 minutes
+        Gives Nourishment for 5 minutes
     -Steaming Strider
         Add Minced Hog, cutting Hoglin Loin
         Add Strider Skin, Change to drop when knifing Striders.
-        3 Ground Strider + 2 Minced Hog + 1 Lava Bucket = Stuffed Strider served on Strider Skin
+        3 Ground Strider + 2 Minced Hog + 1 Lava Bucket in a Pot = Stuffed Strider served on Strider Skin
         Eaten from Stick, Gives Steaming Stride Stick
-        Gives Comfort and Fire Res for 4 minutes and 1 minute
+        Gives Comfort and Fire Res for 5 minutes and 1 minute
  -Pie ig
--Origins Vegetarian Meals 10, 3 Feasts,
- -
+    -Meatloaf
+        A pot full of Ground Beef = Half-Cooked Beef Cake ??
+        Half-Cooked Beef Cake can be eaten for Nausea and Hunger for 2 minutes and fills food by 5
+        4 Beef Cakes in a pot = Meatloaf served on Nothing
+        Gives Meatloaf Slice when Knife used
+        Gives comfort for 10 minutes
+
+-Origins Vegetarian Meals, 3 Feasts
+ -Meals
+    -Sautéed Mushroom Pasta
+        2 Brown Mushrooms + Raw Pasta + Milk + Tomato Sauce + Onion in a Pot = Sautéed Mushroom Pasta served on Bowl
+        Gives Nourishment 2 minutes
+        Fills slightly less than Squid Ink Pasta
+    -Sweet Potato Bake
+        Potato + Sugar + Onion + Brown Mushroom + Pumpkin Slice in a Table = Raw Potato Bake
+        Bake in Smoker for Sweet Potato Bake
+        Gives Nourishment 2 minutes and Speed 30 seconds
+        Fills same as Stuffed Potato
+    -Mushroom Pesto
+        Brown Mushroom + Raw Pasta + Pesto Sauce + Tomato + Onion in a Pot = Mushroom Pesto served on Bowl
+        Gives Nourishment 2 minutes, Sparkling 1 minute
+        Fills same as Squid Ink Pasta
+    -Onion Petals
+        Onion + Create Wheat Flour + Egg in a Pot = 4 Onion Petals served on nothing
+        Gives Comfort 1 minute, fast to eat
+        Fills the Same as Carrot
+    -Falafel
+        2 Create Wheat Flour + Tomato + Onion + Egg + Milk in a Pot = Falafel served on nothing
+        Gives Comfort 3 minutes
+        Fills the same as Steak
+ -Feasts
+    -Tomato Soup Bread Bowl
+        2 Tomato Sauce + Tomato + Onion + Milk + Large Bread= Tomato Soup Bread Bowl served on Bowl
+        Large Bread crafted with 4 Bread in Table
+        Gives Comfort 5 minutes
+        Fills the same as Stuffed Pumpkin
+    -Stagnant Spore Delight
+        Spore Cultured Cheese + Pesto Sauce + 2 Raw Pasta + 2 Brown Mushroom + Baked Potato = Stagnant Spore Delight served on Bowl
+        Gives Sparkling 3 minutes Nourishment 5 minutes
+        Fills about the same as Shepherds Pie
+-Origin End Food
+-Savage and Ravage Spore Food
+  -Meals
+    -Stagnant Spores
+        Gained from killing a Creeper on fire with an explosion
+        Gives Sparkling, effect that makes you sparkle Creeper Green and makes Creepies around you grow faster
+        Fills the same as Dried Kelp but doesn't eat fast
+    -Stagnant Spore Dough
+        Stagnant Spores + Create Wheat Flour + Water Bucket/Bottle crafted shapeless = Stagnant Spore Dough
+        Fills the same as Raw Chicken
+        Used in strong sparkly dishes
+    -Pesto Sauce
+        Stagnant Spores + Tomato + Onion = Pesto Sauce
+    -Bacon Spore Quesadilla
+    -Spore Cultured Cheese
+    -
+    -Green Eggs and Ham
+  -Feasts
+    -Creeper Carcass [Feast]
+
 
 
 
