@@ -57,9 +57,10 @@ Features:
         Fills the same as Pasta with Meatballs
  -Feasts
     -Large Pork Feast
-        2 Smoked Ham + Porkchop + 3 Raw Bacon in a Pot = Pork Delight served on bowl
-        Eaten from Bowl
-        Gives Nourishment for 5 minutes
+        2 Smoked Ham + Porkchop + Raw Bacon in a Pot + Ham + Cooked Bacon = Pork Delight served on bowl
+        Double Block Horizontal, 10 servings, first 6 are Pork Plates require Bowls, last 4 are Ribs, require Knife
+        Pork Plates give 5 minutes of Nourishment and 2 minutes of Resistance
+        Ribs give 2 Minutes of Nourishment and 1 minute of Strength
     -Steaming Strider
         Add Minced Hog, cutting Hoglin Loin
         Add Strider Skin, Change to drop when knifing Striders.

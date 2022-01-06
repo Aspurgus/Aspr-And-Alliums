@@ -42,9 +42,16 @@ public class ModItems {
     public static final RegistryObject<Item> SEAFOOD_SALAD = ITEMS.register("seafood_salad",
             () -> new ConsumableItem(new Item.Properties().food(Foods.SEAFOOD_SALAD).containerItem(Items.BOWL).group(AsprAndAlliums.ITEM_GROUP)));
 
+    //Feasts and Items
 
-//    public static final RegistryObject<Item> MEAT_FEAST = ITEMS.register("meat_feast",
-//            () -> new BlockItem((Block)ModBlocks.MEAT.get(), new Item.Properties().maxStackSize(1).group(AsprAndAlliums.ITEM_GROUP)));
+    public static final RegistryObject<Item> LARGE_PORK_FEAST = ITEMS.register("large_pork_feast",
+            () -> new BlockItem((Block)ModBlocks.LARGE_PORK_FEAST.get(), (new Item.Properties()).maxStackSize(1).group(AsprAndAlliums.ITEM_GROUP)));
+
+    public static final RegistryObject<Item> PORK_PLATE = ITEMS.register("pork_plate",
+            () -> new ConsumableItem(new Item.Properties().food(Foods.PORK_PLATE).containerItem(Items.BOWL).group(AsprAndAlliums.ITEM_GROUP)));
+
+    public static final RegistryObject<Item> RIBS = ITEMS.register("ribs",
+            () -> new Item(new Item.Properties().food(Foods.RIBS).group(AsprAndAlliums.ITEM_GROUP)));
 
 
 }

@@ -40,30 +40,18 @@ public class LargePorkFeast extends HorizontalBlock {
     public static final EnumProperty<BedPart> PART;
     public static final IntegerProperty SERVINGS;
     public final Supplier<Item> sliceItem;
-    public final Supplier<Item> snoutItem;
-    public final Supplier<Item> hamItem;
     public final Supplier<Item> servingItem;
     protected static final VoxelShape[] SHAPES;
 
-    public LargePorkFeast(Properties properties, Supplier<Item> sliceItem, Supplier<Item> snoutItem, Supplier<Item> hamItem, Supplier<Item> servingItem) {
+    public LargePorkFeast(Properties properties, Supplier<Item> sliceItem, Supplier<Item> servingItem) {
         super(properties);
         this.sliceItem = sliceItem;
-        this.snoutItem = snoutItem;
-        this.hamItem = hamItem;
         this.servingItem = servingItem;
-        this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateContainer.getBaseState()).with(HORIZONTAL_FACING, Direction.SOUTH)).with(SERVINGS, 11)).with(PART, BedPart.HEAD));
+        this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateContainer.getBaseState()).with(HORIZONTAL_FACING, Direction.SOUTH)).with(SERVINGS, 10)).with(PART, BedPart.HEAD));
     }
 
     public ItemStack getKnifeSliceItem() {
         return new ItemStack((IItemProvider)this.sliceItem.get());
-    }
-
-    public ItemStack getSnoutItem() {
-        return new ItemStack((IItemProvider)this.snoutItem.get());
-    }
-
-    public ItemStack getHamItem() {
-        return new ItemStack((IItemProvider)this.hamItem.get());
     }
 
     public ItemStack getServingItem() {
@@ -72,50 +60,34 @@ public class LargePorkFeast extends HorizontalBlock {
 
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         int servings = (Integer)state.get(SERVINGS);
-        ItemStack serving = this.getSnoutItem();
+        ItemStack serving = this.getServingItem();
         ItemStack heldItem = player.getHeldItem(handIn);
         if (servings == 0) {
             worldIn.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_WOOD_BREAK, SoundCategory.PLAYERS, 1.0F, 1.0F);
             worldIn.destroyBlock(pos, true);
             return ActionResultType.SUCCESS;
         } else {
-            if (servings > 9) {
-                if (ModTags.KNIVES.contains(heldItem.getItem())) {
-                    return this.cutEar(worldIn, pos, state, heldItem, player);
-                }
-
-                player.sendStatusMessage(NDTextUtils.getTranslation("block.feast.use_knife", new Object[]{serving.getContainerItem().getDisplayName()}), true);
-            }
-
-            if (servings == 9) {
+            if (servings > 4) {
                 if (heldItem.isItemEqual(serving.getContainerItem())) {
-                    return this.takeSnout(worldIn, pos, state, player, handIn);
-                }
-
-                player.sendStatusMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{serving.getContainerItem().getDisplayName()}), true);
-            }
-
-            if (servings > 4 && servings < 9) {
-                if (heldItem.isItemEqual(serving.getContainerItem())) {
-                    return this.takeHam(worldIn, pos, state, player, handIn);
+                    return this.takePork(worldIn, pos, state, player, handIn);
                 }
 
                 player.sendStatusMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{serving.getContainerItem().getDisplayName()}), true);
             }
 
             if (servings < 5) {
-                if (heldItem.isItemEqual(serving.getContainerItem())) {
-                    return this.takeServing(worldIn, pos, state, player, handIn);
+                if (ModTags.KNIVES.contains(heldItem.getItem())) {
+                    return this.cutRib(worldIn, pos, state, heldItem, player);
                 }
 
-                player.sendStatusMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{serving.getContainerItem().getDisplayName()}), true);
+                player.sendStatusMessage(NDTextUtils.getTranslation("block.feast.use_knife", new Object[]{serving.getContainerItem().getDisplayName()}), true);
             }
 
             return ActionResultType.SUCCESS;
         }
     }
 
-    public ActionResultType cutEar(World worldIn, BlockPos pos, BlockState state, ItemStack tool, @Nullable PlayerEntity player) {
+    public ActionResultType cutRib(World worldIn, BlockPos pos, BlockState state, ItemStack tool, @Nullable PlayerEntity player) {
         int servings = (Integer)state.get(SERVINGS);
         BedPart part = (BedPart)state.get(PART);
         BlockPos pairPos = pos.offset(getDirectionToOtherPart(part, (Direction)state.get(HORIZONTAL_FACING)));
@@ -135,49 +107,7 @@ public class LargePorkFeast extends HorizontalBlock {
         return ActionResultType.SUCCESS;
     }
 
-    public ActionResultType takeSnout(World worldIn, BlockPos pos, BlockState state, PlayerEntity player, Hand handIn) {
-        int servings = (Integer)state.get(SERVINGS);
-        BedPart part = (BedPart)state.get(PART);
-        BlockPos pairPos = pos.offset(getDirectionToOtherPart(part, (Direction)state.get(HORIZONTAL_FACING)));
-        BlockState pairState = worldIn.getBlockState(pairPos);
-        ItemStack serving = this.getSnoutItem();
-        ItemStack heldItem = player.getHeldItem(handIn);
-        worldIn.setBlockState(pairPos, (BlockState)pairState.with(SERVINGS, servings - 1), 3);
-        worldIn.setBlockState(pos, (BlockState)state.with(SERVINGS, servings - 1), 3);
-        if (!player.abilities.isCreativeMode) {
-            heldItem.shrink(1);
-        }
-
-        if (!player.inventory.addItemStackToInventory(serving)) {
-            player.dropItem(serving, false);
-        }
-
-        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        return ActionResultType.SUCCESS;
-    }
-
-    public ActionResultType takeHam(World worldIn, BlockPos pos, BlockState state, PlayerEntity player, Hand handIn) {
-        int servings = (Integer)state.get(SERVINGS);
-        BedPart part = (BedPart)state.get(PART);
-        BlockPos pairPos = pos.offset(getDirectionToOtherPart(part, (Direction)state.get(HORIZONTAL_FACING)));
-        BlockState pairState = worldIn.getBlockState(pairPos);
-        ItemStack serving = this.getHamItem();
-        ItemStack heldItem = player.getHeldItem(handIn);
-        worldIn.setBlockState(pairPos, (BlockState)pairState.with(SERVINGS, servings - 1), 3);
-        worldIn.setBlockState(pos, (BlockState)state.with(SERVINGS, servings - 1), 3);
-        if (!player.abilities.isCreativeMode) {
-            heldItem.shrink(1);
-        }
-
-        if (!player.inventory.addItemStackToInventory(serving)) {
-            player.dropItem(serving, false);
-        }
-
-        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        return ActionResultType.SUCCESS;
-    }
-
-    public ActionResultType takeServing(World worldIn, BlockPos pos, BlockState state, PlayerEntity player, Hand handIn) {
+    public ActionResultType takePork(World worldIn, BlockPos pos, BlockState state, PlayerEntity player, Hand handIn) {
         int servings = (Integer)state.get(SERVINGS);
         BedPart part = (BedPart)state.get(PART);
         BlockPos pairPos = pos.offset(getDirectionToOtherPart(part, (Direction)state.get(HORIZONTAL_FACING)));
@@ -197,6 +127,7 @@ public class LargePorkFeast extends HorizontalBlock {
         worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 1.0F, 1.0F);
         return ActionResultType.SUCCESS;
     }
+
 
     public static Direction getDirectionToOtherPart(BedPart part, Direction direction) {
         return part == BedPart.HEAD ? direction : direction.getOpposite();
@@ -266,9 +197,22 @@ public class LargePorkFeast extends HorizontalBlock {
     }
 
     static {
+
         PART = BlockStateProperties.BED_PART;
-        SERVINGS = IntegerProperty.create("servings", 0, 11);
-        SHAPES = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D)};
+        SERVINGS = IntegerProperty.create("servings", 0, 10);
+        SHAPES = new VoxelShape[]{
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D)
+        };
     }
 
 }

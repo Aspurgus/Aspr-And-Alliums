@@ -35,5 +35,21 @@ public class Foods {
     //Foods
     public static final Food FISH_BALLS = (new Builder().hunger(8).saturation(0.4f).build());
 
+    //Feast Items
+    public static final Food PORK_PLATE = (new Builder().hunger(16).saturation(0.8f).effect(() -> {
+        return new EffectInstance((Effect) ModEffects.NOURISHED.get(), 6000, 0);
+    }, 1.0f).effect(() -> {
+        return new EffectInstance((Effect) Effects.RESISTANCE, 2400, 0);
+    }, 1.0f).build());
+
+    public static final Food RIBS = (new Builder().hunger(8).saturation(0.4f).effect(() -> {
+        return new EffectInstance((Effect) ModEffects.NOURISHED.get(), 2400, 0);
+    }, 1.0f).effect(() -> {
+        return new EffectInstance((Effect) Effects.STRENGTH, 1200, 0);
+    }, 1.0f).build());
+
+
+
+
 
 }

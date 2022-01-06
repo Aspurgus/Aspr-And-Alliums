@@ -44,8 +44,9 @@ public class ModBlockStates extends BlockStateProvider {
             int servings = (Integer)state.get(FeastBlock.SERVINGS);
             String suffix = "_stage" + (block.getMaxServings() - servings);
             if (servings == 0) {
-                suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+                suffix = block.hasLeftovers ? "_leftover" : "_stage10";
             }
+
 
             return ConfiguredModel.builder().modelFile(this.existingModel(this.blockName(block) + suffix)).rotationY(((int)((Direction)state.get(FeastBlock.FACING)).getHorizontalAngle() + 180) % 360).build();
         });
