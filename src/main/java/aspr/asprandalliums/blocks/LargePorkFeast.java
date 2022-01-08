@@ -40,13 +40,18 @@ public class LargePorkFeast extends HorizontalBlock {
     public static final EnumProperty<BedPart> PART;
     public static final IntegerProperty SERVINGS;
     public final Supplier<Item> sliceItem;
-    public final Supplier<Item> servingItem;
-    protected static final VoxelShape[] SHAPES;
+    public final Supplier<Item> firstServingItem;
+    public final Supplier<Item> secondServingItem;
+    protected static final VoxelShape[] HEAD_SHAPES;
+    protected static final VoxelShape[] FOOT_SHAPES;
+    protected static final VoxelShape FOOT_BOWL;
 
-    public LargePorkFeast(Properties properties, Supplier<Item> sliceItem, Supplier<Item> servingItem) {
+
+    public LargePorkFeast(Properties properties, Supplier<Item> sliceItem, Supplier<Item> secondServingItem, Supplier<Item> firstServingItem) {
         super(properties);
         this.sliceItem = sliceItem;
-        this.servingItem = servingItem;
+        this.firstServingItem = firstServingItem;
+        this.secondServingItem = secondServingItem;
         this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateContainer.getBaseState()).with(HORIZONTAL_FACING, Direction.SOUTH)).with(SERVINGS, 10)).with(PART, BedPart.HEAD));
     }
 
@@ -54,25 +59,35 @@ public class LargePorkFeast extends HorizontalBlock {
         return new ItemStack((IItemProvider)this.sliceItem.get());
     }
 
-    public ItemStack getServingItem() {
-        return new ItemStack((IItemProvider)this.servingItem.get());
+    public ItemStack getFirstServingItem() {
+        return new ItemStack((IItemProvider)this.firstServingItem.get());
+    }
+    public ItemStack getSecondServingItem() {
+        return new ItemStack((IItemProvider)this.secondServingItem.get());
     }
 
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         int servings = (Integer)state.get(SERVINGS);
-        ItemStack serving = this.getServingItem();
+        ItemStack servingOne = this.getFirstServingItem();
+        ItemStack servingTwo = this.getSecondServingItem();
         ItemStack heldItem = player.getHeldItem(handIn);
         if (servings == 0) {
             worldIn.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_WOOD_BREAK, SoundCategory.PLAYERS, 1.0F, 1.0F);
             worldIn.destroyBlock(pos, true);
             return ActionResultType.SUCCESS;
         } else {
-            if (servings > 4) {
-                if (heldItem.isItemEqual(serving.getContainerItem())) {
+            if (servings > 7) {
+                if (heldItem.isItemEqual(servingOne.getContainerItem())) {
                     return this.takePork(worldIn, pos, state, player, handIn);
                 }
 
-                player.sendStatusMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{serving.getContainerItem().getDisplayName()}), true);
+                player.sendStatusMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{servingOne.getContainerItem().getDisplayName()}), true);
+            }
+
+            if (servings < 8 && servings > 4) {
+
+                    return this.takeFry(worldIn, pos, state, player, handIn);
+
             }
 
             if (servings < 5) {
@@ -80,7 +95,7 @@ public class LargePorkFeast extends HorizontalBlock {
                     return this.cutRib(worldIn, pos, state, heldItem, player);
                 }
 
-                player.sendStatusMessage(NDTextUtils.getTranslation("block.feast.use_knife", new Object[]{serving.getContainerItem().getDisplayName()}), true);
+                player.sendStatusMessage(NDTextUtils.getTranslation("block.feast.use_knife"), true);
             }
 
             return ActionResultType.SUCCESS;
@@ -112,13 +127,30 @@ public class LargePorkFeast extends HorizontalBlock {
         BedPart part = (BedPart)state.get(PART);
         BlockPos pairPos = pos.offset(getDirectionToOtherPart(part, (Direction)state.get(HORIZONTAL_FACING)));
         BlockState pairState = worldIn.getBlockState(pairPos);
-        ItemStack serving = this.getServingItem();
+        ItemStack serving = this.getFirstServingItem();
         ItemStack heldItem = player.getHeldItem(handIn);
         worldIn.setBlockState(pairPos, (BlockState)pairState.with(SERVINGS, servings - 1), 3);
         worldIn.setBlockState(pos, (BlockState)state.with(SERVINGS, servings - 1), 3);
         if (!player.abilities.isCreativeMode) {
             heldItem.shrink(1);
         }
+
+        if (!player.inventory.addItemStackToInventory(serving)) {
+            player.dropItem(serving, false);
+        }
+
+        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        return ActionResultType.SUCCESS;
+    }
+
+    public ActionResultType takeFry(World worldIn, BlockPos pos, BlockState state, PlayerEntity player, Hand handIn) {
+        int servings = (Integer)state.get(SERVINGS);
+        BedPart part = (BedPart)state.get(PART);
+        ItemStack serving = this.getSecondServingItem();
+        BlockPos pairPos = pos.offset(getDirectionToOtherPart(part, (Direction)state.get(HORIZONTAL_FACING)));
+        BlockState pairState = worldIn.getBlockState(pairPos);
+        worldIn.setBlockState(pairPos, (BlockState)pairState.with(SERVINGS, servings - 1), 3);
+        worldIn.setBlockState(pos, (BlockState)state.with(SERVINGS, servings - 1), 3);
 
         if (!player.inventory.addItemStackToInventory(serving)) {
             player.dropItem(serving, false);
@@ -138,7 +170,50 @@ public class LargePorkFeast extends HorizontalBlock {
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        return SHAPES[(Integer)state.get(SERVINGS)];
+        if (state.get(PART) == BedPart.HEAD) {
+            if (state.get(HORIZONTAL_FACING) == Direction.NORTH) {
+
+                return HEAD_SHAPES[(Integer)state.get(SERVINGS)];
+
+            }
+            if (state.get(HORIZONTAL_FACING) == Direction.EAST) {
+
+                return rotateShape(Direction.NORTH, Direction.EAST, HEAD_SHAPES[(Integer)state.get(SERVINGS)]);
+
+            }
+            if (state.get(HORIZONTAL_FACING) == Direction.SOUTH) {
+
+                return rotateShape(Direction.NORTH, Direction.SOUTH, HEAD_SHAPES[(Integer)state.get(SERVINGS)]);
+
+            }
+            else {
+
+                return rotateShape(Direction.NORTH, Direction.WEST, HEAD_SHAPES[(Integer)state.get(SERVINGS)]);
+
+            }
+
+        }
+        else {
+            if (state.get(HORIZONTAL_FACING) == Direction.NORTH) {
+
+                return FOOT_SHAPES[(Integer)state.get(SERVINGS)];
+
+            }
+            if (state.get(HORIZONTAL_FACING) == Direction.EAST) {
+
+                return rotateShape(Direction.NORTH, Direction.EAST, FOOT_SHAPES[(Integer)state.get(SERVINGS)]);
+
+            }
+            if (state.get(HORIZONTAL_FACING) == Direction.SOUTH) {
+
+                return rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[(Integer)state.get(SERVINGS)]);
+
+            }
+            else {
+
+                return rotateShape(Direction.NORTH, Direction.WEST, FOOT_SHAPES[(Integer)state.get(SERVINGS)]);
+            }
+        }
     }
 
     public BlockRenderType getRenderType(BlockState state) {
@@ -173,6 +248,19 @@ public class LargePorkFeast extends HorizontalBlock {
         super.onBlockHarvested(worldIn, pos, state, player);
     }
 
+    public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
+        VoxelShape[] buffer = new VoxelShape[]{ shape, VoxelShapes.empty() };
+
+        int times = (to.getHorizontalIndex() - from.getHorizontalIndex() + 4) % 4;
+        for (int i = 0; i < times; i++) {
+            buffer[0].forEachBox((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1], VoxelShapes.create(1-maxZ, minY, minX, 1-minZ, maxY, maxX)));
+            buffer[0] = buffer[1];
+            buffer[1] = VoxelShapes.empty();
+        }
+
+        return buffer[0];
+    }
+
     public PushReaction getPushReaction(BlockState state) {
         return PushReaction.DESTROY;
     }
@@ -200,19 +288,64 @@ public class LargePorkFeast extends HorizontalBlock {
 
         PART = BlockStateProperties.BED_PART;
         SERVINGS = IntegerProperty.create("servings", 0, 10);
-        SHAPES = new VoxelShape[]{
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-                Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D)
-        };
+        FOOT_BOWL = VoxelShapes.combineAndSimplify(Block.makeCuboidShape(
+                1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 16.0D), Block.makeCuboidShape(
+                2.0D, 2.0D, 2.0D, 14.0D, 1.0D, 16.0D), IBooleanFunction.ONLY_FIRST);
+        FOOT_SHAPES = new VoxelShape[]{
+                FOOT_BOWL,
+                FOOT_BOWL,
+                FOOT_BOWL,
+                VoxelShapes.combine(FOOT_BOWL,
+                        Block.makeCuboidShape(5.0D, 1.0D, 12.0D, 11.0D, 9.0D, 16.0D)
+                        ,IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL,
+                        Block.makeCuboidShape(5.0D, 1.0D, 8.0D, 11.0D, 9.0D, 16.0D)
+                        ,IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 2.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 2.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        IBooleanFunction.OR
+                ), IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 3.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 3.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        IBooleanFunction.OR
+                ), IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        IBooleanFunction.OR
+                ), IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        IBooleanFunction.OR
+                ), IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        IBooleanFunction.OR
+                ), IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        IBooleanFunction.OR
+                    ), IBooleanFunction.OR)
+                };
+        HEAD_SHAPES =new VoxelShape[]{
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[0]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[1]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[2]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[3]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[4]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[5]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[6]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[7]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[8]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[9]),
+                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[10])
+            };
     }
-
 }
+
+

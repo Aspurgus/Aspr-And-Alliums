@@ -21,7 +21,7 @@ public class ModItems {
 
     //Icon Item
     public static final RegistryObject<Item> ASPR = ITEMS.register("aspr",
-            () -> new Item(new Item.Properties().group(AsprAndAlliums.ITEM_GROUP)));
+            () -> new Item(new Item.Properties()));
 
     //Meal Items
     public static final RegistryObject<Item> SIRLOIN_STEAK_AND_SHROOMS = ITEMS.register("sirloin_steak_and_shrooms",
@@ -49,6 +49,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> PORK_PLATE = ITEMS.register("pork_plate",
             () -> new ConsumableItem(new Item.Properties().food(Foods.PORK_PLATE).containerItem(Items.BOWL).group(AsprAndAlliums.ITEM_GROUP)));
+
+    public static final RegistryObject<Item> FRIED_PORK = ITEMS.register("fried_pork",
+            () -> new Item(new Item.Properties().food(Foods.FRIED_PORK).group(AsprAndAlliums.ITEM_GROUP)));
 
     public static final RegistryObject<Item> RIBS = ITEMS.register("ribs",
             () -> new Item(new Item.Properties().food(Foods.RIBS).group(AsprAndAlliums.ITEM_GROUP)));

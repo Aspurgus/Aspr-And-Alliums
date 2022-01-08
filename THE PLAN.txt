@@ -58,8 +58,9 @@ Features:
  -Feasts
     -Large Pork Feast
         2 Smoked Ham + Porkchop + Raw Bacon in a Pot + Ham + Cooked Bacon = Pork Delight served on bowl
-        Double Block Horizontal, 10 servings, first 6 are Pork Plates require Bowls, last 4 are Ribs, require Knife
+        Double Block Horizontal, 10 servings, first 3 are Pork Plates require Bowls, next 3 are Fried Pork, last 4 are Ribs, require Knife
         Pork Plates give 5 minutes of Nourishment and 2 minutes of Resistance
+        Fried Pork give 3 minutes of Nourishment and 1 minute of Resistance
         Ribs give 2 Minutes of Nourishment and 1 minute of Strength
     -Steaming Strider
         Add Minced Hog, cutting Hoglin Loin
@@ -91,11 +92,11 @@ Features:
         Gives Nourishment 2 minutes, Sparkling 1 minute
         Fills same as Squid Ink Pasta
     -Onion Petals
-        Onion + Create Wheat Flour + Egg in a Pot = 4 Onion Petals served on nothing
+        Onion + Dough + Egg in a Pot = 4 Onion Petals served on nothing
         Gives Comfort 1 minute, fast to eat
         Fills the Same as Carrot
     -Falafel
-        2 Create Wheat Flour + Tomato + Onion + Egg + Milk in a Pot = Falafel served on nothing
+        2 Dough + Tomato + Onion + Egg + Milk in a Pot = Falafel served on nothing
         Gives Comfort 3 minutes
         Fills the same as Steak
  -Feasts
@@ -116,7 +117,7 @@ Features:
         Gives Sparkling, effect that makes you sparkle Creeper Green and makes Creepies around you grow faster
         Fills the same as Dried Kelp but doesn't eat fast
     -Stagnant Spore Dough
-        Stagnant Spores + Create Wheat Flour + Water Bucket/Bottle crafted shapeless = Stagnant Spore Dough
+        Stagnant Spores + Dough + Water Bucket/Bottle crafted shapeless = Stagnant Spore Dough
         Fills the same as Raw Chicken
         Used in strong sparkly dishes
     -Pesto Sauce

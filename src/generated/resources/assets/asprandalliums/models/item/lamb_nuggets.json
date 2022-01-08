@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "asprandalliums:item/meat_feast"
+    "layer0": "asprandalliums:item/lamb_nuggets"
   }
 }

@@ -19,10 +19,20 @@ public class ModItemModels extends ItemModelProvider {
 
         //Items
         builder(itemGenerated, "item/aspr");
-        builder(itemGenerated, "item/meat_feast");
+        builder(itemGenerated, "item/sirloin_steak_and_shrooms");
+        builder(itemGenerated, "item/fish_balls");
+        builder(itemGenerated, "item/chicken_and_bone_marrow");
+        builder(itemGenerated, "item/beef_bone_broth");
+        builder(itemGenerated, "item/lamb_nuggets");
+        builder(itemGenerated, "item/seafood_salad");
+
+        //Feast Items
+        builder(itemGenerated, "item/large_pork_feast");
+        builder(itemGenerated, "item/pork_plate");
+        builder(itemGenerated, "item/fried_pork");
+        builder(itemGenerated, "item/ribs");
 
 
-        //Feast Blocks
 
 
     }

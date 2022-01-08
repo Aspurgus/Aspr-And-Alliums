@@ -19,7 +19,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LARGE_PORK_FEAST = BLOCKS.register("large_pork_feast",
     () -> new LargePorkFeast(Properties.from(Blocks.CAKE).setLightLevel((state) -> {
         return 5;
-    }), ModItems.RIBS, ModItems.PORK_PLATE));
+    }), ModItems.RIBS, ModItems.FRIED_PORK, ModItems.PORK_PLATE));
 
 
 }

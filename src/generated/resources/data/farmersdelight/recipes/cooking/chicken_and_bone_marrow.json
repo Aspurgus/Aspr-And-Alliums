@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "result": {
+    "item": "asprandalliums:chicken_and_bone_marrow"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

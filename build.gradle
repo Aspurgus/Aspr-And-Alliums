@@ -27,6 +27,8 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 asprandalliums {
                     source sourceSets.main
@@ -38,6 +40,8 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 asprandalliums {
                     source sourceSets.main
@@ -50,6 +54,8 @@ minecraft {
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
             args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources/")
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 asprandalliums {
                     source sourceSets.main
@@ -72,6 +78,9 @@ dependencies {
     implementation fg.deobf("curse.maven:nethersdelight-496394:3443481")
     implementation fg.deobf("curse.maven:savageandravage-381736:3226442")
     implementation fg.deobf("curse.maven:endergetic-291509:3154938")
+
+    //JEI
+
 
 }
 

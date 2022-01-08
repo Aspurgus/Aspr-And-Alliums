@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "result": {
+    "item": "asprandalliums:beef_bone_broth"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

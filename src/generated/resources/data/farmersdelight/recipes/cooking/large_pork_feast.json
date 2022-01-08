@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "farmersdelight:smoked_ham"
+    },
+    {
+      "item": "farmersdelight:smoked_ham"
+    },
+    {
+      "item": "minecraft:cooked_porkchop"
+    },
+    {
+      "item": "farmersdelight:bacon"
+    },
+    {
+      "item": "farmersdelight:ham"
+    },
+    {
+      "item": "farmersdelight:cooked_bacon"
+    }
+  ],
+  "result": {
+    "item": "asprandalliums:large_pork_feast"
+  },
+  "experience": 0.6,
+  "cookingtime": 400
+}
