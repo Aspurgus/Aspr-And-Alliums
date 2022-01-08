@@ -2,6 +2,7 @@ package aspr.asprandalliums;
 
 import aspr.asprandalliums.registry.ModBlocks;
 import aspr.asprandalliums.registry.ModItems;
+import aspr.asprandalliums.setup.ClientEventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +34,7 @@ public class AsprAndAlliums
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        eventBus.addListener(ClientEventHandler::init);
         ModItems.ITEMS.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
 

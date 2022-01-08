@@ -64,7 +64,7 @@ Features:
         Ribs give 2 Minutes of Nourishment and 1 minute of Strength
     -Steaming Strider
         Add Minced Hog, cutting Hoglin Loin
-        Add Strider Skin, Change to drop when knifing Striders.
+        Add Strider Skin, Chance to drop when knifing Striders.
         3 Ground Strider + 2 Minced Hog + 1 Lava Bucket in a Pot = Stuffed Strider served on Strider Skin
         Eaten from Stick, Gives Steaming Stride Stick
         Gives Comfort and Fire Res for 5 minutes and 1 minute
