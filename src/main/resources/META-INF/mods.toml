@@ -51,3 +51,15 @@ From a
     versionRange = "[2.1,)"
     ordering = "AFTER"
     side = "BOTH"
+[[dependencies.asprandalliums]]
+    modId = "savageandravage"
+    mandatory = true
+    versionRange = "[3.1,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.asprandalliums]]
+    modId = "endergetic"
+    mandatory = true
+    versionRange = "[3.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
