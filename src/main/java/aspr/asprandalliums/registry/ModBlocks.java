@@ -23,7 +23,7 @@ public class ModBlocks {
     }), ModItems.RIBS, ModItems.FRIED_PORK, ModItems.PORK_PLATE));
 
     //Pies
-    public static final RegistryObject<Block> MEATLOAF = BLOCKS.register("meatloaf",
-            () -> new PieBlock(Properties.from(Blocks.CAKE), ModItems.ASPR));
+//    public static final RegistryObject<Block> MEATLOAF = BLOCKS.register("meatloaf",
+//            () -> new PieBlock(Properties.from(Blocks.CAKE), ModItems.ASPR));
 
 }
