@@ -128,7 +128,18 @@ Features:
     -Green Eggs and Ham
   -Feasts
     -Creeper Carcass [Feast]
-
+-Dynamic Trees
+    -Abundance
+        -Redbud Trees
+        -Jacaranda
+    -Atmospheric
+        -Yes
+    -Autumnity
+    -Bayou Blues
+    -Druidcraft
+    -Environmental
+    -Farmers Respite
+    -Upgrade Aquatic
 
 
 
