@@ -302,33 +302,33 @@ public class LargePorkFeast extends HorizontalBlock {
                         Block.makeCuboidShape(5.0D, 1.0D, 8.0D, 11.0D, 9.0D, 16.0D)
                         ,IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 2.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 2.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 3.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 3.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 4.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 4.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
+                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
                         IBooleanFunction.OR
                     ), IBooleanFunction.OR)
                 };

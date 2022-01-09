@@ -31,32 +31,32 @@ Features:
 
 -Origins Meat Meals, 2 Feasts, 1 Pie
  -Meals
-    -Sirloin Steak and Shrooms
+    xSirloin Steak and Shrooms
         Hoglin Sirloin + one of each nether mushroom In a Pot = Sirloin Steak and Shrooms served on bowl
         Gives Nourishment for 3 minutes and 1 heart Absorption for 1 minute
         Fills around the same as Steak and Potatoes
-    -Fish Balls
+    !Fish Balls
         2 Tuna Fillets + Egg in a Pot = 4 Fish Balls served on nothing
         Fills around the same as a Steak
-    -Chicken and Bone Marrow
+    xChicken and Bone Marrow
         2 Chicken or Chicken Cuts + Bone in a Pot = Chicken and Bone Marrow served on Bone
         Gives back Bonemeal
         Gives Comfort for 3 minutes
         Fills the same as Chicken Soup
-    -Beef Bone Broth
+    xBeef Bone Broth
         1 Raw Beef + 1 Raw Beef or Ground Beef + 2 Bones in a pot = Beef Bone Broth served on Bowl
         Gives Comfort for 3 minutes
         Fills the same as Chicken Soup
-    -Lamb Nuggets
+    xLamb Nuggets
         2 Lamb Chops + Egg in a Pot = 2 Lamb Nuggets served on nothing
         Gives Nourishment for 1 Minute, fast to eat
         Fills the same as Cooked Mutton
-    -Seafood Salad
+    !Seafood Salad
         Tuna Fillet + Salmon Fillet + Tropical Fish Fillet + Cooked Pufferfish Fillet + Bowl in Table = Seafood Salad
         Gives Nourishment for 3 minutes and 1 minute Conduit Power
         Fills the same as Pasta with Meatballs
  -Feasts
-    -Large Pork Feast
+    xLarge Pork Feast
         2 Smoked Ham + Porkchop + Raw Bacon in a Pot + Ham + Cooked Bacon = Pork Delight served on bowl
         Double Block Horizontal, 10 servings, first 3 are Pork Plates require Bowls, next 3 are Fried Pork, last 4 are Ribs, require Knife
         Pork Plates give 5 minutes of Nourishment and 2 minutes of Resistance

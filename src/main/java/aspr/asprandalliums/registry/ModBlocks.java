@@ -10,6 +10,7 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import vectorwing.farmersdelight.blocks.PieBlock;
 
 public class ModBlocks {
 
@@ -21,5 +22,8 @@ public class ModBlocks {
         return 5;
     }), ModItems.RIBS, ModItems.FRIED_PORK, ModItems.PORK_PLATE));
 
+    //Pies
+    public static final RegistryObject<Block> MEATLOAF = BLOCKS.register("meatloaf",
+            () -> new PieBlock(Properties.from(Blocks.CAKE), ModItems.ASPR));
 
 }

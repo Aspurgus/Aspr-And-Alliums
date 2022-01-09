@@ -3,6 +3,7 @@
 	"parent": "block/block",
 	"texture_size": [256, 256],
 	"textures": {
+		"particle": "asprandalliums:block/large_pork_feast",
 		"1": "asprandalliums:block/foot_bowl"
 	},
 	"elements": [
