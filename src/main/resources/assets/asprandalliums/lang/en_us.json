@@ -1,18 +1,27 @@
 {
 
   "block.asprandalliums.large_pork_feast": "Large Pork Feast",
+  "block.asprandalliums.meatloaf": "Meatloaf",
+  "block.asprandalliums.raw_meatloaf": "Raw Meatloaf",
 
   "item.asprandalliums.aspr": "Aspr's Face",
+
   "item.asprandalliums.sirloin_steak_and_shrooms": "Sirloin Steak and Shrooms",
   "item.asprandalliums.fish_balls": "Fish Balls",
   "item.asprandalliums.chicken_and_bone_marrow": "Chicken and Bone Marrow",
   "item.asprandalliums.beef_bone_broth": "Beef Bone Broth",
   "item.asprandalliums.lamb_nuggets": "Lamb Nuggets",
   "item.asprandalliums.seafood_salad": "Seafood Salad",
+
   "item.asprandalliums.large_pork_feast": "Large Pork Feast",
   "item.asprandalliums.fried_pork": "Fried Pork",
   "item.asprandalliums.pork_plate": "Plate of Pork",
   "item.asprandalliums.ribs": "Pork Ribs",
+
+  "item.asprandalliums.meatloaf": "Meatloaf",
+  "item.asprandalliums.raw_meatloaf": "Raw Meatloaf",
+  "item.asprandalliums.meatloaf_slice": "Meatloaf Slice",
+  "item.asprandalliums.raw_meatloaf_slice": "Raw Meatloaf Slice",
 
   "itemGroup.asprandalliums": "Aspr and Alliums"
 

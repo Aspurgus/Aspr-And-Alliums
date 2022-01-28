@@ -23,7 +23,9 @@ public class ModBlocks {
     }), ModItems.RIBS, ModItems.FRIED_PORK, ModItems.PORK_PLATE));
 
     //Pies
-//    public static final RegistryObject<Block> MEATLOAF = BLOCKS.register("meatloaf",
-//            () -> new PieBlock(Properties.from(Blocks.CAKE), ModItems.ASPR));
+    public static final RegistryObject<Block> RAW_MEATLOAF = BLOCKS.register("raw_meatloaf",
+            () -> new PieBlock(Properties.from(Blocks.CAKE), ModItems.RAW_MEATLOAF_SLICE));
+    public static final RegistryObject<Block> MEATLOAF = BLOCKS.register("meatloaf",
+            () -> new PieBlock(Properties.from(Blocks.CAKE), ModItems.MEATLOAF_SLICE));
 
 }

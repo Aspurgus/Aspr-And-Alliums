@@ -28,10 +28,10 @@ public class ModItems {
             () -> new ConsumableItem(new Item.Properties().food(Foods.SIRLION_STEAK_AND_SHROOMS).containerItem(Items.BOWL).group(AsprAndAlliums.ITEM_GROUP)));
 
     public static final RegistryObject<Item> FISH_BALLS = ITEMS.register("fish_balls",
-            () -> new Item(new Item.Properties().food(Foods.FISH_BALLS).group(AsprAndAlliums.ITEM_GROUP)));
+            () -> new Item(new Item.Properties().food(Foods.FISH_BALLS).containerItem(Items.STICK).group(AsprAndAlliums.ITEM_GROUP)));
 
     public static final RegistryObject<Item> CHICKEN_AND_BONE_MARROW = ITEMS.register("chicken_and_bone_marrow",
-            () -> new ConsumableItem(new Item.Properties().food(Foods.CHICKEN_AND_BONE_MARROW).containerItem(Items.BOWL).group(AsprAndAlliums.ITEM_GROUP)));
+            () -> new ConsumableItem(new Item.Properties().food(Foods.CHICKEN_AND_BONE_MARROW).containerItem(Items.BONE_MEAL).group(AsprAndAlliums.ITEM_GROUP)));
 
     public static final RegistryObject<Item> BEEF_BONE_BROTH = ITEMS.register("beef_bone_broth",
             () -> new ConsumableItem(new Item.Properties().food(Foods.BEEF_BONE_BROTH).containerItem(Items.BOWL).group(AsprAndAlliums.ITEM_GROUP)));
@@ -56,5 +56,13 @@ public class ModItems {
     public static final RegistryObject<Item> RIBS = ITEMS.register("ribs",
             () -> new Item(new Item.Properties().food(Foods.RIBS).group(AsprAndAlliums.ITEM_GROUP)));
 
-
+    //Pies and Items
+    public static final RegistryObject<Item> RAW_MEATLOAF = ITEMS.register("raw_meatloaf",
+            () -> new BlockItem((Block)ModBlocks.RAW_MEATLOAF.get(), (new Item.Properties()).maxStackSize(1).group(AsprAndAlliums.ITEM_GROUP)));
+    public static final RegistryObject<Item> RAW_MEATLOAF_SLICE = ITEMS.register("raw_meatloaf_slice",
+            () -> new Item(new Item.Properties().food(Foods.RAW_MEATLOAF_SLICE).group(AsprAndAlliums.ITEM_GROUP)));
+    public static final RegistryObject<Item> MEATLOAF = ITEMS.register("meatloaf",
+            () -> new BlockItem((Block)ModBlocks.MEATLOAF.get(), (new Item.Properties()).maxStackSize(1).group(AsprAndAlliums.ITEM_GROUP)));
+    public static final RegistryObject<Item> MEATLOAF_SLICE = ITEMS.register("meatloaf_slice",
+            () -> new Item(new Item.Properties().food(Foods.MEATLOAF_SLICE).group(AsprAndAlliums.ITEM_GROUP)));
 }

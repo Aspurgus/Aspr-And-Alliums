@@ -42,7 +42,7 @@ public class LargePorkFeast extends HorizontalBlock {
     public final Supplier<Item> sliceItem;
     public final Supplier<Item> firstServingItem;
     public final Supplier<Item> secondServingItem;
-    protected static final VoxelShape[] HEAD_SHAPES;
+    protected static final VoxelShape HEAD_SHAPES;
     protected static final VoxelShape[] FOOT_SHAPES;
     protected static final VoxelShape FOOT_BOWL;
 
@@ -173,22 +173,22 @@ public class LargePorkFeast extends HorizontalBlock {
         if (state.get(PART) == BedPart.HEAD) {
             if (state.get(HORIZONTAL_FACING) == Direction.NORTH) {
 
-                return HEAD_SHAPES[(Integer)state.get(SERVINGS)];
+                return HEAD_SHAPES;
 
             }
             if (state.get(HORIZONTAL_FACING) == Direction.EAST) {
 
-                return rotateShape(Direction.NORTH, Direction.EAST, HEAD_SHAPES[(Integer)state.get(SERVINGS)]);
+                return rotateShape(Direction.NORTH, Direction.EAST, HEAD_SHAPES);
 
             }
             if (state.get(HORIZONTAL_FACING) == Direction.SOUTH) {
 
-                return rotateShape(Direction.NORTH, Direction.SOUTH, HEAD_SHAPES[(Integer)state.get(SERVINGS)]);
+                return rotateShape(Direction.NORTH, Direction.SOUTH, HEAD_SHAPES);
 
             }
             else {
 
-                return rotateShape(Direction.NORTH, Direction.WEST, HEAD_SHAPES[(Integer)state.get(SERVINGS)]);
+                return rotateShape(Direction.NORTH, Direction.WEST, HEAD_SHAPES);
 
             }
 
@@ -293,58 +293,51 @@ public class LargePorkFeast extends HorizontalBlock {
                 2.0D, 2.0D, 2.0D, 14.0D, 1.0D, 16.0D), IBooleanFunction.ONLY_FIRST);
         FOOT_SHAPES = new VoxelShape[]{
                 FOOT_BOWL,
-                FOOT_BOWL,
-                FOOT_BOWL,
                 VoxelShapes.combine(FOOT_BOWL,
-                        Block.makeCuboidShape(5.0D, 1.0D, 12.0D, 11.0D, 9.0D, 16.0D)
+                        Block.makeCuboidShape(4.0D, 1.0D, 8.0D, 11.0D, 9.0D, 12.0D)
                         ,IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL,
-                        Block.makeCuboidShape(5.0D, 1.0D, 8.0D, 11.0D, 9.0D, 16.0D)
+                        Block.makeCuboidShape(4.0D, 1.0D, 8.0D, 11.0D, 9.0D, 16.0D)
+                        ,IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL,
+                        Block.makeCuboidShape(4.0D, 1.0D, 8.0D, 11.0D, 9.0D, 20.0D)
+                        ,IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL,//Skins Gone
+                        Block.makeCuboidShape(4.0D, 1.0D, 8.0D, 11.0D, 9.0D, 24.0D)
                         ,IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 30.0D),
+                        Block.makeCuboidShape(4.0D, 5.0D, 8.0D, 11.0D, 9.0D, 24.0D),
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 16.0D, 14.0D, 5.0D, 30.0D),
+                        Block.makeCuboidShape(4.0D, 5.0D, 8.0D, 11.0D, 9.0D, 24.0D),
+                        IBooleanFunction.OR
+                ), IBooleanFunction.OR),
+                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(//Filling Gone
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 30.0D),//Meat Filling
+                        Block.makeCuboidShape(4.0D, 5.0D, 8.0D, 11.0D, 9.0D, 24.0D),//Ribs
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 30.0D),//Meat Filling
+                        Block.makeCuboidShape(4.0D, 5.0D, 8.0D, 11.0D, 9.0D, 24.0D),//Ribs
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 30.0D),//Meat Filling
+                        Block.makeCuboidShape(4.0D, 5.0D, 8.0D, 11.0D, 9.0D, 24.0D),//Ribs
                         IBooleanFunction.OR
                 ), IBooleanFunction.OR),
                 VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
-                        IBooleanFunction.OR
-                ), IBooleanFunction.OR),
-                VoxelShapes.combine(FOOT_BOWL, VoxelShapes.combine(
-                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 16.0D),
-                        Block.makeCuboidShape(5.0D, 5.0D, 8.0D, 11.0D, 9.0D, 16.0D),
+                        Block.makeCuboidShape(2.0D, 1.0D, 2.0D, 14.0D, 5.0D, 30.0D),//Meat Filling
+                        Block.makeCuboidShape(4.0D, 5.0D, 8.0D, 11.0D, 9.0D, 24.0D),//Ribs
                         IBooleanFunction.OR
                     ), IBooleanFunction.OR)
                 };
-        HEAD_SHAPES =new VoxelShape[]{
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[0]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[1]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[2]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[3]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[4]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[5]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[6]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[7]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[8]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[9]),
-                rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_SHAPES[10])
-            };
+        HEAD_SHAPES = rotateShape(Direction.NORTH, Direction.SOUTH, FOOT_BOWL);
+
     }
 }
 

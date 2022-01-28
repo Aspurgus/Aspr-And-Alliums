@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "bites=0,facing=north": {
+      "model": "asprandalliums:block/meatloaf"
+    },
+    "bites=1,facing=north": {
+      "model": "asprandalliums:block/meatloaf_slice1"
+    },
+    "bites=2,facing=north": {
+      "model": "asprandalliums:block/meatloaf_slice2"
+    },
+    "bites=3,facing=north": {
+      "model": "asprandalliums:block/meatloaf_slice3"
+    },
+    "bites=0,facing=south": {
+      "model": "asprandalliums:block/meatloaf",
+      "y": 180
+    },
+    "bites=1,facing=south": {
+      "model": "asprandalliums:block/meatloaf_slice1",
+      "y": 180
+    },
+    "bites=2,facing=south": {
+      "model": "asprandalliums:block/meatloaf_slice2",
+      "y": 180
+    },
+    "bites=3,facing=south": {
+      "model": "asprandalliums:block/meatloaf_slice3",
+      "y": 180
+    },
+    "bites=0,facing=west": {
+      "model": "asprandalliums:block/meatloaf",
+      "y": 270
+    },
+    "bites=1,facing=west": {
+      "model": "asprandalliums:block/meatloaf_slice1",
+      "y": 270
+    },
+    "bites=2,facing=west": {
+      "model": "asprandalliums:block/meatloaf_slice2",
+      "y": 270
+    },
+    "bites=3,facing=west": {
+      "model": "asprandalliums:block/meatloaf_slice3",
+      "y": 270
+    },
+    "bites=0,facing=east": {
+      "model": "asprandalliums:block/meatloaf",
+      "y": 90
+    },
+    "bites=1,facing=east": {
+      "model": "asprandalliums:block/meatloaf_slice1",
+      "y": 90
+    },
+    "bites=2,facing=east": {
+      "model": "asprandalliums:block/meatloaf_slice2",
+      "y": 90
+    },
+    "bites=3,facing=east": {
+      "model": "asprandalliums:block/meatloaf_slice3",
+      "y": 90
+    }
+  }
+}

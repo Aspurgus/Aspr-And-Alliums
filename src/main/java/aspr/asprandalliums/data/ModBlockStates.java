@@ -11,6 +11,8 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.blocks.FeastBlock;
+import vectorwing.farmersdelight.blocks.PieBlock;
+import vectorwing.farmersdelight.data.BlockStates;
 
 public class ModBlockStates extends BlockStateProvider {
 
@@ -36,7 +38,8 @@ public class ModBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-//        this.feastBlock((FeastBlock)ModBlocks.MEAT.get());
+        this.pieBlock((Block)ModBlocks.RAW_MEATLOAF.get());
+        this.pieBlock((Block)ModBlocks.MEATLOAF.get());
     }
 
     public void feastBlock(FeastBlock block) {
@@ -49,6 +52,15 @@ public class ModBlockStates extends BlockStateProvider {
 
 
             return ConfiguredModel.builder().modelFile(this.existingModel(this.blockName(block) + suffix)).rotationY(((int)((Direction)state.get(FeastBlock.FACING)).getHorizontalAngle() + 180) % 360).build();
+        });
+    }
+
+    //Farmers Delight PieBlock generator
+    public void pieBlock(Block block) {
+        this.getVariantBuilder(block).forAllStates((state) -> {
+            int bites = (Integer)state.get(PieBlock.BITES);
+            String suffix = bites > 0 ? "_slice" + bites : "";
+            return ConfiguredModel.builder().modelFile(this.existingModel(this.blockName(block) + suffix)).rotationY(((int)((Direction)state.get(PieBlock.FACING)).getHorizontalAngle() + 180) % 360).build();
         });
     }
 }

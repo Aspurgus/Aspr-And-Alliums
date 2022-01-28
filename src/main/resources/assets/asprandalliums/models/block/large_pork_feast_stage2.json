@@ -3,7 +3,6 @@
 	"parent": "block/block",
 	"texture_size": [128, 128],
 	"textures": {
-		"particle": "asprandalliums:block/large_pork_feast_particle",
 		"0": "asprandalliums:block/large_pork_feast",
 		"particle": "asprandalliums:block/large_pork_feast"
 	},
@@ -70,7 +69,7 @@
 		},
 		{
 			"from": [2.01, 1, 2.01],
-			"to": [13.99, 2.99, 29.99],
+			"to": [13.99, 1.99, 29.99],
 			"faces": {
 				"north": {"uv": [3, 3.125, 4.5, 3.5], "texture": "#0"},
 				"east": {"uv": [4.125, 0, 4.5, 3.5], "rotation": 90, "texture": "#0"},

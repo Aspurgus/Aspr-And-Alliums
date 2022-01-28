@@ -1,0 +1,10 @@
+{
+  "parent": "farmersdelight:block/pie_slice2",
+  "textures": {
+    "particle": "asprandalliums:block/meatloaf_top",
+    "bottom": "asprandalliums:block/meatloaf_bottom",
+    "inner": "asprandalliums:block/meatloaf_inner",
+    "side": "asprandalliums:block/meatloaf_side",
+    "top": "asprandalliums:block/meatloaf_top"
+  }
+}

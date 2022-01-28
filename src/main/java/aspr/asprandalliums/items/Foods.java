@@ -54,6 +54,20 @@ public class Foods {
         return new EffectInstance((Effect) Effects.STRENGTH, 1200, 0);
     }, 1.0f).build());
 
+    //Pie Items
+    public static final Food RAW_MEATLOAF_SLICE = (new Builder().hunger(8).saturation(0.4f).effect(() -> {
+        return new EffectInstance((Effect) Effects.HUNGER, 2400, 1);
+    }, 1.0f).effect(() -> {
+        return new EffectInstance((Effect) Effects.SLOWNESS, 2400, 1);
+    }, 1.0f).effect(() -> {
+        return new EffectInstance((Effect) Effects.NAUSEA, 2400, 0);
+    }, 1.0f).build());
+
+    public static final Food MEATLOAF_SLICE = (new Builder().hunger(15).saturation(0.6f).effect(() -> {
+        return new EffectInstance((Effect) ModEffects.NOURISHED.get(), 6000, 0);
+    }, 1.0f).effect(() -> {
+        return new EffectInstance((Effect) ModEffects.COMFORT.get(), 6000, 0);
+    }, 1.0f).build());
 
 
 

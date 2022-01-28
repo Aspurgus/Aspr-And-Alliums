@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "asprandalliums:item/raw_meatloaf_slice"
+  }
+}

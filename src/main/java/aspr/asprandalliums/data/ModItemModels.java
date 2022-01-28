@@ -32,6 +32,12 @@ public class ModItemModels extends ItemModelProvider {
         builder(itemGenerated, "item/fried_pork");
         builder(itemGenerated, "item/ribs");
 
+        //Pie Items
+        builder(itemGenerated, "item/raw_meatloaf");
+        builder(itemGenerated, "item/raw_meatloaf_slice");
+        builder(itemGenerated, "item/meatloaf");
+        builder(itemGenerated, "item/meatloaf_slice");
+
 
 
 

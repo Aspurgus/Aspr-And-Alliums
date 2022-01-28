@@ -4,26 +4,121 @@ THEME: Food and Farming+
 -required farmers delight kek-
 
 Current Task:
-Entities Section
-Origins Meat
+Awae! Learnng tile entities
 
 NEW MOD IDEA
 compat and extras fr me an a besties server :DD
 Features:
 
--Work Stations
+-Tile Entities
     -Bamboo Mat [?]
         bamboo-ish background gui
         used to make Sushi Rolls
         Sushi Rolls are strong unique foods
-
+    -Aging Cask
+        No gui
+        Fluid container as well as Item
+        Stores up to 1 bucket of liquid [1000mb]
+        -Cheese
+            -Sporish Curds
+                1000mb Milk
+                Creeper Spores
+                Sugar
+                1 in game day
+                Unplaceable
+            -Mozzarella
+                1000mb Milk
+                Brown Mushroom
+                -Avg
+                2 in game days
+                -Messy Mozzarella > 1 in game day placed > Mozzarella
+            -Brie Wheel
+                1000mb Milk
+                Warped Fungus
+                Shroomlight Tear
+                -Warm
+                4 in game days
+                -Messy Brie Wheel > 1 in game day placed > Brie Wheel
+            -Gouda
+                1000mb Milk
+                Crimson Fungus
+                Nether Wart
+                -Hot
+                5 in game days
+            -Feta
+                1000mb Milk
+                Red Mushroom
+                -Avg
+                3 in game days
+                Unplaceable [by itself]
+        -Alcohol
+            -Creipe Drykk
+                Wheat Flour
+                Creeper Spores
+                Stagnant Spores
+                1000mb Water
+                -Hot
+                3 in game days
+            -Hard Cider
+                2 Apple
+                1000mb Water
+                Wheat Flour
+                Stagnant Spores
+                -Cold
+                4 in game days
+            -Cherry Champagne
+                2 Cherries
+                1000mb Water
+                Sugar
+                Stagnant Spores
+                -Avg
+                1 in game week
+            -Frothy Berry Kriek
+                2 Sweet Berries
+                500mb Water
+                500mb Milk
+                Wheat
+                Wheat Flour
+                Stagnant Spores
+                -Cold
+                5 in game days
+        -Pickled things
+            -Vinegar
+                750mb Hard Cider
+                250mb Water
+                Spider Eye
+                -Warm
+                1 in game day
+            -Sauerkraut
+                500mb Vinegar
+                2 Cabbage Leaf
+                -Warm
+                1 in game day
+            -Pickled Beet
+                500mb Vinegar
+                2 Diced Beet
+                -Avg
+                1 in game day
+    -Serving Dish
+        -Holds items and displays 3D model [possibly make data driven for release]
+    -Oven
+        For specialized baked items, not including simple pies
+        Does not have a gui, but does have inventory.
+        Requires fuel and takes a while
+        -Planned 1
+            Replace farmers cakes, pies, basic baked goods to implement
+            raw forms to bake.
+        -Planned 2
+            Different Temps can be used to bake different types of cakes and stuff
+            Higher temp is less efficient with fuel
+            ?? Feels too useless ?? Nether oven can make blaze cakes and high temp nether goods
 -Entities
     -Tuna [may need Citadel]
         Large fish, spawns in groups of 2-3 maybe with a few variants
         Death leaves Corpse
-        Right clicking Corpse with a Knife will give 2-4 Tuna Cuts, a Tuna Head, and 1-2 Bones
-        Tuna Cuts can be smoked to get Tuna Steak
-        Tuna Cuts can be cut to Tuna Fillets [May Change]
+        Right clicking Corpse with a Knife will give 2-4 Tuna Steaks, a Tuna Head, and 1-2 Bones
+        Tuna Steaks can be smoked to get Tuna Steak
+        Tuna Steaks can be cut to Tuna Fillets [May Change]
         Tuna Head is like a trophy mount, can be used in Dog Food
         Tuna Fillets can make Fish Balls
         Tuna Fillets can make Fried Tuna
@@ -31,50 +126,23 @@ Features:
 
 -Origins Meat Meals, 2 Feasts, 1 Pie
  -Meals
-    xSirloin Steak and Shrooms
-        Hoglin Sirloin + one of each nether mushroom In a Pot = Sirloin Steak and Shrooms served on bowl
-        Gives Nourishment for 3 minutes and 1 heart Absorption for 1 minute
-        Fills around the same as Steak and Potatoes
     !Fish Balls
         2 Tuna Fillets + Egg in a Pot = 4 Fish Balls served on nothing
         Fills around the same as a Steak
-    xChicken and Bone Marrow
-        2 Chicken or Chicken Cuts + Bone in a Pot = Chicken and Bone Marrow served on Bone
-        Gives back Bonemeal
-        Gives Comfort for 3 minutes
-        Fills the same as Chicken Soup
-    xBeef Bone Broth
-        1 Raw Beef + 1 Raw Beef or Ground Beef + 2 Bones in a pot = Beef Bone Broth served on Bowl
-        Gives Comfort for 3 minutes
-        Fills the same as Chicken Soup
-    xLamb Nuggets
-        2 Lamb Chops + Egg in a Pot = 2 Lamb Nuggets served on nothing
-        Gives Nourishment for 1 Minute, fast to eat
-        Fills the same as Cooked Mutton
     !Seafood Salad
         Tuna Fillet + Salmon Fillet + Tropical Fish Fillet + Cooked Pufferfish Fillet + Bowl in Table = Seafood Salad
         Gives Nourishment for 3 minutes and 1 minute Conduit Power
         Fills the same as Pasta with Meatballs
  -Feasts
-    xLarge Pork Feast
-        2 Smoked Ham + Porkchop + Raw Bacon in a Pot + Ham + Cooked Bacon = Pork Delight served on bowl
-        Double Block Horizontal, 10 servings, first 3 are Pork Plates require Bowls, next 3 are Fried Pork, last 4 are Ribs, require Knife
-        Pork Plates give 5 minutes of Nourishment and 2 minutes of Resistance
-        Fried Pork give 3 minutes of Nourishment and 1 minute of Resistance
-        Ribs give 2 Minutes of Nourishment and 1 minute of Strength
-    -Steaming Strider
+   -Steaming Strider
         Add Minced Hog, cutting Hoglin Loin
         Add Strider Skin, Chance to drop when knifing Striders.
-        3 Ground Strider + 2 Minced Hog + 1 Lava Bucket in a Pot = Stuffed Strider served on Strider Skin
-        Eaten from Stick, Gives Steaming Stride Stick
+        2 Ground Strider + 1 Minced Hog + 1 Strider Slice + Warped Fungus + 1 Lava Bucket in a Pot = Stuffed Strider served on Strider Skin
+        4 Steaming Strider Plate [On Shroom Bowl]
+        Comfort 5 minutes Nourishment 1 minute
+        Hoglin Ham sized
+        Stride Skewer [On Stick]
         Gives Comfort and Fire Res for 5 minutes and 1 minute
- -Pie ig
-    -Meatloaf
-        A pot full of Ground Beef = Half-Cooked Beef Cake ??
-        Half-Cooked Beef Cake can be eaten for Nausea and Hunger for 2 minutes and fills food by 5
-        4 Beef Cakes in a pot = Meatloaf served on Nothing
-        Gives Meatloaf Slice when Knife used
-        Gives comfort for 10 minutes
 
 -Origins Vegetarian Meals, 3 Feasts
  -Meals
@@ -127,7 +195,7 @@ Features:
     -
     -Green Eggs and Ham
   -Feasts
-    -Creeper Carcass [Feast]
+    -Creeper Cradles [Feast]
 
 
 
