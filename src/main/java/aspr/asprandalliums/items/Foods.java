@@ -69,6 +69,8 @@ public class Foods {
         return new EffectInstance((Effect) ModEffects.COMFORT.get(), 6000, 0);
     }, 1.0f).build());
 
+    //WIP
+
 
 
 

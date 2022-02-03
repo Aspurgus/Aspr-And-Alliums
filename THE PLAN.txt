@@ -124,14 +124,36 @@ Features:
         Tuna Fillets can make Fried Tuna
         Tuna Fillets can make Seafood Salad
 -New Entity Drops
-    -Zombie
     -Spider
+        Tarantula Tusks
+            Used for Bony Dish
+            Can be made into bonemeal
+        Purple Flank
+            Can be cooked into Roasted Spider
+            Can be cut into String and Purple Cutlets [Roasted Spider Cutlets]
+            Potted into Hallows Eve Feast [#Raw Spider, Rotten Flesh, Red Mushroom, Cleaned Bat, Ground Beef]
+    -Cave Spider
+        Spider Legs
+            Potted into Fried Legs
     -Horse
+        Chevaline
+            Cut into Cavalry Rolls [Roasted Horse Rolls]
+            Cooked into Chevaline Steak
+            Potted into Horses Demise and Steed Stew
+        Steed's Leg
+            Cut into Bone and Chevaline
+            Cooked into Roasted Riding Leg
+            Potted into LEG [Steed's Leg, Bone, Ground Beef] and Horses Demise
     -Druidcraft Beetle
-    -Husk
-    -Drowned
+        Blue Sweetbreads
+            Cut into Raw Beetle Links [Beetle Sausages]
+            Cooked into Roast Beetle 'Sweets'
+            Potted into Chitin Stew and Sweetbreads and Hardcaps
     -Bat
-    -
+        Bat Carcass
+            Gives Infection
+            Cut into Cleaned Bat
+            Potted into Hallows Eve Feast and 2020 Compote
 -Origins Meat Meals, 2 Feasts, 1 Pie
  -Meals
     !Fish Balls
@@ -141,6 +163,13 @@ Features:
         Tuna Fillet + Salmon Fillet + Tropical Fish Fillet + Cooked Pufferfish Fillet + Bowl in Table = Seafood Salad
         Gives Nourishment for 3 minutes and 1 minute Conduit Power
         Fills the same as Pasta with Meatballs
+    -Salmon Slabs
+        2 Salmon Fillets + Cooked Salmon Fillet + Bone Meal in a Pot = 2 Salmon Slabs served on Bowl
+        Fills Like Steak
+    -Cod and Lobster
+        2 Cod Fillets + Lobstertail in a Pot = Baked Codster served on Bowl
+        Fills Like Steak + 2
+        1 minute Comfort
  -Feasts
    -Steaming Strider
         Add Minced Hog, cutting Hoglin Loin

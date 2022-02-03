@@ -21,7 +21,7 @@ public class ModItems {
 
     //Icon Item
     public static final RegistryObject<Item> ASPR = ITEMS.register("aspr",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().group(AsprAndAlliums.ITEM_GROUP)));
 
     //Meal Items
     public static final RegistryObject<Item> SIRLOIN_STEAK_AND_SHROOMS = ITEMS.register("sirloin_steak_and_shrooms",
@@ -65,4 +65,47 @@ public class ModItems {
             () -> new BlockItem((Block)ModBlocks.MEATLOAF.get(), (new Item.Properties()).maxStackSize(1).group(AsprAndAlliums.ITEM_GROUP)));
     public static final RegistryObject<Item> MEATLOAF_SLICE = ITEMS.register("meatloaf_slice",
             () -> new Item(new Item.Properties().food(Foods.MEATLOAF_SLICE).group(AsprAndAlliums.ITEM_GROUP)));
+
+    //WIP
+        //Spiders
+    public static final RegistryObject<Item> TARANTULA_TUSKS = ITEMS.register("tarantula_tusks",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PURPLE_FLANK = ITEMS.register("purple_flank",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROASTED_SPIDER = ITEMS.register("roasted_spider",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PURPLE_CUTLETS = ITEMS.register("purple_cutlets",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROASTED_SPIDER_CUTLETS = ITEMS.register("roasted_spider_cutlets",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SPIDER_LEGS = ITEMS.register("spider_legs",
+            () -> new Item(new Item.Properties()));
+        //Horse
+    public static final RegistryObject<Item> CHEVALINE = ITEMS.register("chevaline",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHEVALINE_STEAK = ITEMS.register("chevaline_steak",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CAVALRY_ROLLS = ITEMS.register("cavalry_rolls",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROASTED_HORSE_ROLLS = ITEMS.register("roasted_horse_rolls",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STEEDS_LEG = ITEMS.register("steeds_leg",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROASTED_RIDING_LEG = ITEMS.register("roasted_riding_leg",
+            () -> new Item(new Item.Properties()));
+        //Druidcraft Beetle
+    public static final RegistryObject<Item> BLUE_SWEETBREADS = ITEMS.register("blue_sweetbreads",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BEETLE_SWEETS = ITEMS.register("beetle_sweets",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_BEETLE_LINKS = ITEMS.register("raw_beetle_links",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BEETLE_SAUSAGES = ITEMS.register("beetle_sausages",
+            () -> new Item(new Item.Properties()));
+        //Corona Vermin
+    public static final RegistryObject<Item> BAT_CARCASS = ITEMS.register("bat_carcass",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CLEANED_BAT = ITEMS.register("cleaned_bat",
+            () -> new Item(new Item.Properties()));
+
 }
