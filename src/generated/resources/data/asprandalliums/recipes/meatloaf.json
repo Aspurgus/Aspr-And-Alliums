@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "asprandalliums:raw_meatloaf"
+  },
+  "result": "asprandalliums:meatloaf",
+  "experience": 0.6,
+  "cookingtime": 200
+}
