@@ -1,17 +1,20 @@
 
 modLoader="javafml" #mandatory
 loaderVersion="[36,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-license="All rights reserved"
+issueTrackerURL="https://github.com/Aspurgus/Aspr-And-Alliums/issues"
+license="MIT License"
 
 [[mods]] #mandatory
 modId="asprandalliums" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Aspr and Alliums" #mandatory
+displayURL="https://github.com/Aspurgus/Aspr-And-Alliums"
 logoFile="logo.png" #optional
+logoBlur= false
 credits="The free time of no school" #optional
 authors="Aspr and Aspr" #optional
 description='''
-From a
+From a little cottage of friends with some cheescake downstairs
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.asprandalliums]] #optional

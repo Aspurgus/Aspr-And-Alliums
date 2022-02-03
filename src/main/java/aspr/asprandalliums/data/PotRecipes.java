@@ -26,6 +26,7 @@ public class PotRecipes {
     public static void register(Consumer<IFinishedRecipe> consumer) {
         originsMeatMeals(consumer);
         originsMeatFeasts(consumer);
+        originsMeatPies(consumer);
 
     }
 
@@ -38,6 +39,10 @@ public class PotRecipes {
 
     private static void originsMeatFeasts(Consumer<IFinishedRecipe> consumer) {
         CookingPotRecipeBuilder.cookingPotRecipe((IItemProvider) ModItems.LARGE_PORK_FEAST.get(), 1, SLOW_COOKING, 0.6F).addIngredient(vectorwing.farmersdelight.registry.ModItems.SMOKED_HAM.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.SMOKED_HAM.get()).addIngredient(Items.COOKED_PORKCHOP).addIngredient(vectorwing.farmersdelight.registry.ModItems.BACON.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.HAM.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.COOKED_BACON.get()).build(consumer);
+    }
+
+    private static void originsMeatPies(Consumer<IFinishedRecipe> consumer) {
+        CookingPotRecipeBuilder.cookingPotRecipe((IItemProvider) ModItems.RAW_MEATLOAF.get(), 1, SLOW_COOKING, 0.6F).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get());
     }
 
 }

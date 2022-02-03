@@ -123,7 +123,15 @@ Features:
         Tuna Fillets can make Fish Balls
         Tuna Fillets can make Fried Tuna
         Tuna Fillets can make Seafood Salad
-
+-New Entity Drops
+    -Zombie
+    -Spider
+    -Horse
+    -Druidcraft Beetle
+    -Husk
+    -Drowned
+    -Bat
+    -
 -Origins Meat Meals, 2 Feasts, 1 Pie
  -Meals
     !Fish Balls
