@@ -42,7 +42,7 @@ public class PotRecipes {
     }
 
     private static void originsMeatPies(Consumer<IFinishedRecipe> consumer) {
-        CookingPotRecipeBuilder.cookingPotRecipe((IItemProvider) ModItems.RAW_MEATLOAF.get(), 1, SLOW_COOKING, 0.6F).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get());
+        CookingPotRecipeBuilder.cookingPotRecipe((IItemProvider) ModItems.RAW_MEATLOAF.get(), 1, SLOW_COOKING, 0.6F).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).addIngredient(vectorwing.farmersdelight.registry.ModItems.MINCED_BEEF.get()).build(consumer);
     }
 
 }
